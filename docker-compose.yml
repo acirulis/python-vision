@@ -1,0 +1,17 @@
+version: '2'
+services:
+    db:
+      image: mysql:5.7
+      ports:
+        - "3306:3306"
+      volumes:
+        - dbvolume:/var/lib/mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=toor
+    webserver:
+     image: acirulis/python-vision
+volumes:
+  dbvolume:
+
+networks:
+  python:
