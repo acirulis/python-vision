@@ -1,6 +1,2 @@
-numpy
-matplotlib
-pandas
-scikit-learn
-ggplot
 mysqlclient
+flask

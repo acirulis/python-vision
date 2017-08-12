@@ -17,4 +17,10 @@ RUN pip install -r requirements.txt
 #lets wait for matplotlib 2.0.1 before this will fixed
 ENV MPLBACKEND TkAgg
 
+#lets install yolo
+RUN git clone https://github.com/pjreddie/darknet \
+&& cd darknet \
+&& make
+
+
 ENTRYPOINT  ["bash"]
