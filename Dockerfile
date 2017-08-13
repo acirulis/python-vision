@@ -26,7 +26,7 @@ RUN git clone https://github.com/pjreddie/darknet \
 && make
 
 #lets install opencv
-RUN apt-get install -y build-essential python3-dev python-dev cmake unzip wget qt5-default libvtk6-dev libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev\
+RUN apt-get install -y build-essential python3-dev python-dev cmake unzip wget qt5-default libvtk6-dev libjpeg62-turbo-dev libtiff5-dev libjasper-dev libpng12-dev\
 && wget https://github.com/opencv/opencv/archive/3.2.0.zip
 
 RUN unzip 3.2.0.zip \
