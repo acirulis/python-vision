@@ -27,8 +27,9 @@ RUN git clone https://github.com/pjreddie/darknet \
 
 #lets install opencv
 RUN apt-get install -y build-essential python3-dev python-dev cmake unzip wget qt5-default libvtk6-dev libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev\
-&& wget https://github.com/opencv/opencv/archive/3.2.0.zip \
-&& unzip 3.2.0.zip \
+&& wget https://github.com/opencv/opencv/archive/3.2.0.zip
+
+RUN unzip 3.2.0.zip \
 && rm 3.2.0.zip \
 && mv opencv-3.2.0 OpenCV \
 && cd OpenCV \
@@ -37,11 +38,7 @@ RUN apt-get install -y build-essential python3-dev python-dev cmake unzip wget q
 && cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON -DENABLE_PRECOMPILED_HEADERS=OFF .. \
 && make -j4 \
 && make install \
-&& ldconfig \
-&& \
-
-
-
+&& ldconfig
 
 
 ENTRYPOINT  ["bash"]
