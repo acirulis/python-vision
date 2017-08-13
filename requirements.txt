@@ -1,2 +1,4 @@
+numpy
 mysqlclient
+opencv-python
 flask
