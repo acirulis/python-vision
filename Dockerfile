@@ -15,19 +15,17 @@ RUN apt-get -y update \
 
 WORKDIR /root
 COPY  requirements.txt /root/
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 #lets wait for matplotlib 2.0.1 before this will fixed
-ENV MPLBACKEND TkAgg
+# ENV MPLBACKEND TkAgg
 
 #lets install yolo
 RUN git clone https://github.com/pjreddie/darknet \
 && cd darknet \
 && make
 
-
-RUN apt-get install -y qt5-default libvtk6-dev libjpeg62-turbo-dev libtiff5-dev libjasper-dev libpng12-dev
-
+ENV PATH $PATH:/root/darknet
 
 #lets install opencv
 # RUN apt-get install -y build-essential python3-dev python-dev cmake unzip wget qt5-default libvtk6-dev libjpeg62-turbo-dev libtiff5-dev libjasper-dev libpng12-dev\
