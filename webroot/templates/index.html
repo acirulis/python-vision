@@ -3,21 +3,27 @@
   <head>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
           rel="stylesheet">
-    <p style="text-align:center;"><img src="logo.jpg" width="1280"></p>
+    <p style="text-align:center;"><img src="static/demo.png" width="400"/></p>
   </head>
   <body>
     <div class="container">
       <div class="header">
-        <h3 class="text-muted">Choose an image to recognize</h3>
+          <h3 class="text-muted">Choose an image for object detection <a href="/process">process </a></h3>
       </div>
       <hr/>
       <div>
       
-      <form action="upload" method="post" enctype="multipart/form-data">
+      <form action="process" method="post" enctype="multipart/form-data">
         <input type="file" name="file"><br /><br />
         <input type="submit" value="Upload">
       </form>
       </div>
     </div>
+<br /><br />
+      <footer class="footer">
+      <div class="container">
+        <p class="text-muted">&copy; 2017 WD / v0.1 <a href="/sysinfo">system info</a></p>
+      </div>
+    </footer>
   </body>
 </html>

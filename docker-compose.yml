@@ -10,6 +10,8 @@ services:
         - MYSQL_ROOT_PASSWORD=toor
     webserver:
      image: acirulis/python-vision
+     ports:
+       - "5000:5000"
 volumes:
   dbvolume:
 
