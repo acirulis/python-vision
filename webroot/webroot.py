@@ -31,12 +31,20 @@ def adaptive_resize(filename, max_size=1024):
 def draw_object(filename, crd, name = 'Car'):
     img = cv2.imread(filename, 1)
     imh, imw, _ = img.shape
-    x = float(crd[0]) # - 120
-    y = float(crd[1]) #- 250
-    w = float(crd[2])
-    h = float(crd[3])
-    top_left = (int((x-w/2.)*imw), int((y-h/2.)*imh))
-    bottom_right = ( int((x+w/2.)*imw), int((y+h/2.)*imh) )
+    # x = float(crd[0]) # - 120
+    # y = float(crd[1]) #- 250
+    # w = float(crd[2])
+    # h = float(crd[3])
+    # top_left = (int((x-w/2.)*imw), int((y-h/2.)*imh))
+    # bottom_right = ( int((x+w/2.)*imw), int((y+h/2.)*imh) )
+
+    x = int(crd[0])
+    y = int(crd[1])
+    w = int(crd[2])
+    h = int(crd[3])
+    top_left = (x - int(w/2), y - int(h/2))
+    bottom_right = ( x + int(w/2), y + int(h/2) )
+
     img = cv2.rectangle(img, top_left, bottom_right,(0,255,220), 4)
 
     cv2.imwrite(filename, img)
